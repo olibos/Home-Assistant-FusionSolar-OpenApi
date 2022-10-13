@@ -17,7 +17,7 @@ When this is done, just install the repository.
 1. Contact service team at eu_inverter_support@huawei.com to create an openAPI account for your plant.
 2. Get credentials
 3. Find your PlantID (aka station code)\
-Follow the documentation and espetially the [Step 5: Interface of Plant List](https://forum.huawei.com/enterprise/en/communicate-with-fusionsolar-through-an-openapi-account/thread/591478-100027#:~:text=Interface%20of%20Plant%20List)
+Follow the documentation and especially the [Step 5: Interface of Plant List](https://forum.huawei.com/enterprise/en/communicate-with-fusionsolar-through-an-openapi-account/thread/591478-100027#:~:text=Interface%20of%20Plant%20List)
 ![image](https://forum.huawei.com/enterprise/en/data/attachment/forum/201912/26/231051iegoqemvx5eeo3a5.png?9.png)
 Copy the stationCode.
 
