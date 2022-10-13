@@ -1,0 +1,13 @@
+{
+  "domain": "fusion_solar_openapi",
+  "name": "FusionSolar OpenAPI",
+  "documentation": "https://github.com/olibos/Home-Assisant-FusionSolar-OpenAPI",
+  "issue_tracker": "https://github.com/olibos/Home-Assisant-FusionSolar-OpenAPI/issues",
+  "dependencies": [],
+  "config_flow": false,
+  "codeowners": [
+    "olibos"
+  ],
+  "requirements": [],
+  "version": "1.0.0"
+}
