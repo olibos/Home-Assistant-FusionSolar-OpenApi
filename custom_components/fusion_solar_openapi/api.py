@@ -50,7 +50,8 @@ class FusionSolarOpenApi:
             if (ATTR_TOTAL_CURRENT_DAY_ENERGY not in kpi):
                 raise FusionSolarKioskApiError(f"Invalid response from API (missing {ATTR_TOTAL_CURRENT_DAY_ENERGY})")
 
-            devInfo = self.post('getDevList', {"stationCodes":plantId})[ATTR_DATA][0]
+            devInfo = next(filter(lambda d: d.get("devTypeId") in [1, 38], self.post('getDevList', {"stationCodes":plantId})[ATTR_DATA]), None)
+            _LOGGER.debug(f'Selected device: {devInfo}')
             devKpi = self.post('getDevRealKpi', {"stationCodes":plantId, "devIds": str(devInfo[ATTR_ID]), "devTypeId": devInfo[ATTR_DATA_DEVTYPEID]})[ATTR_DATA][0][ATTR_DATA_REALKPI]
             if (ATTR_ACTIVE_POWER not in devKpi):
                 raise FusionSolarKioskApiError(f"Invalid response from API (missing {ATTR_ACTIVE_POWER})")
