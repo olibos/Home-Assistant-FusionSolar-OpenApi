@@ -1,8 +1,10 @@
 """API client for FusionSolar OpenAPI."""
 import html
 import json
+import logging
 from homeassistant.const import ATTR_ID
 from .const import *
+
 from requests import Session
 from time import (sleep)
 
@@ -12,6 +14,8 @@ from .const import (
     ATTR_SUCCESS,
     ATTR_DATA_REALKPI
 )
+
+_LOGGER = logging.getLogger(__name__)
 
 class FusionSolarOpenApi:
     def __init__(self, baseUrl, username, password):
@@ -31,6 +35,7 @@ class FusionSolarOpenApi:
                 token= response.cookies.get(name='XSRF-TOKEN')
                 if (token):
                     session.headers.update({ 'XSRF-TOKEN': token })
+                _LOGGER.debug(f'Request: {method}\nResponse: {json}')
                 return json
         
         raise FusionSolarKioskApiError(f'Unable to get data from {method}')
