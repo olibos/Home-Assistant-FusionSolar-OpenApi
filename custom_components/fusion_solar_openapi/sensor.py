@@ -62,7 +62,7 @@ async def async_setup_platform(hass, config, async_add_entities, discovery_info=
         _LOGGER,
         name='FusionSolarOpenAPI',
         update_method=async_update_data,
-        update_interval=timedelta(minutes=3),
+        update_interval=timedelta(minutes=5),
     )
 
     # Fetch initial data so we have data when entities subscribe
